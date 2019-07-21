@@ -9,7 +9,6 @@ describe('Cart routes', () => {
   })
 
   describe('/cart', () => {
-
     it('GET /api/cart', async () => {
       const res = await request(app)
         .get('/api/cart')
