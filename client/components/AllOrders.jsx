@@ -7,11 +7,12 @@ class AllOrders extends Component {
     this.props.getAllOrders()
   }
   render() {
-    return !this.props.orders ? (
+    const {orders} = this.props
+    return !orders ? (
       <div>Loading!</div>
     ) : (
       <ul>
-        {this.props.orders.map(order => (
+        {orders.map(order => (
           <div key={order.id}>
             <li>
               <h1>Order:</h1>
