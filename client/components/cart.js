@@ -2,9 +2,6 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {fetchCart, deleteCart} from '../store/cartReducer'
 import {newOrderPosted} from '../store/orderReducer'
-import {Link} from 'react-router-dom'
-import {Button} from 'semantic-ui-react'
-
 class Cart extends Component {
   constructor() {
     super()
@@ -33,6 +30,7 @@ class Cart extends Component {
             subtotal += item.price * item.quantity
             return (
               <div key={item.id} className="cart">
+                <img src={item.img} />
                 <li className="cart-item">{item.name}</li>
                 <div>Quantity: {item.quantity} bag(s)</div>
                 <button
@@ -51,14 +49,15 @@ class Cart extends Component {
           <button
             type="submit"
             onClick={() => this.handleSubmit(subtotal)}
-            id="SubmitFromCart">
+            id="SubmitFromCart"
+          >
             Submit
           </button>
         </div>
       </div>
     )
   }
-  }
+}
 
 const mapStateToProps = state => {
   return {

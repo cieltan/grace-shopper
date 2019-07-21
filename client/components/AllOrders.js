@@ -1,12 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {getAllOrders} from '../store/orderReducer'
-import {Link} from 'react-router-dom'
 
 class AllOrders extends Component {
-  constructor(props) {
-    super(props)
-  }
   componentDidMount() {
     this.props.getAllOrders()
   }

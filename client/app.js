@@ -1,5 +1,5 @@
 import React from 'react'
-import AllRice from './components/all-rice'
+import AllRice from './components/allRice'
 import {Navbar} from './components'
 import Routes from './routes'
 import {Switch, Route} from 'react-router-dom'

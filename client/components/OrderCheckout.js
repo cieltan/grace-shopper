@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import SingleOrder from '../components/SingleOrder'
 import {buyOrder} from '../store/orderReducer'
+
 class OrderCheckout extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
@@ -13,20 +13,24 @@ class OrderCheckout extends Component {
   }
 
   render() {
-    return !this.props.cart ? (
+    const {cart} = this.props
+    return !cart ? (
       <div>Loading!</div>
     ) : (
       <div className="checkout">
-        <h2>Price: ${this.props.price}</h2>
-        <h2>Order Status: {this.props.status}</h2>
-        <h2>Order Number: {this.props.id}</h2>
+        <h2>Price: ${cart.price}</h2>
+        <h2>Order Status: {cart.status}</h2>
+        <h2>Order Number: {cart.id}</h2>
         <h2>Cart: </h2>
-        {this.props.cart.map(item => (
-          <div key={item.id}>
-            <h3>{item.name}</h3>
-            <h3>{item.quantity}</h3>
-          </div>
-        ))}
+        {cart.map(item => {
+          return (
+            <div key={item.id}>
+              <img src={item.img} />
+              <h3>{item.name}</h3>
+              <h3>{item.quantity}</h3>
+            </div>
+          )
+        })}
         <button
           type="submit"
           onClick={() => this.handleSubmit()}

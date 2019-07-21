@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {fetchSingleRice} from '../store/singleRiceReducer'
-import { putCart } from '../store/cartReducer'
-import { Button, Icon } from 'semantic-ui-react'
+import {putCart} from '../store/cartReducer'
+import {Button, Icon} from 'semantic-ui-react'
 
 class SingleRice extends Component {
   constructor() {
@@ -34,7 +34,7 @@ class SingleRice extends Component {
             <h3>Price (per 10 pound bag): ${singleRice.price}</h3>
           </div>
           <Button type="submit" onClick={() => this.handleClick()} id="addCart">
-            ADD TO CART <Icon name="cart"/>
+            ADD TO CART <Icon name="cart" />
           </Button>
         </div>
       </div>
