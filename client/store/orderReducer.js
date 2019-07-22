@@ -85,7 +85,7 @@ const orderReducer = (state = initialState, action) => {
       return {...state, order: action.order}
     case BUY_ORDER:
       const updateId = Number(action.order.id)
-      orders = state.orders.map(order => {
+      const orders = state.orders.map(order => {
         if (order.id === updateId) {
           order.status = 'paid'
         }
