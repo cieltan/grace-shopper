@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {getOrder} from '../store/orderReducer'
+
 class SingleOrder extends Component {
   componentDidMount() {
     this.props.getOrder(this.props.match.params.id)

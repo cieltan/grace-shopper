@@ -6,7 +6,7 @@ import {logout} from '../store'
 import {Login, Signup} from './AuthForm'
 import {UserHome} from './UserHome'
 import {me} from '../store/user'
-import CartCounter from './CartCounter'
+import {CartCounter} from './index'
 
 class Navbar extends Component {
   componentDidMount() {

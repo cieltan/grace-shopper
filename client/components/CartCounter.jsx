@@ -1,17 +1,23 @@
 import React, {Component} from 'react'
-import { connect } from 'react-redux'
-import { fetchCart } from '../store/cartReducer'
-import { Icon } from 'semantic-ui-react'
+import {connect} from 'react-redux'
+import {fetchCart} from '../store/cartReducer'
+import {Icon} from 'semantic-ui-react'
 
 class CartCounter extends Component {
   componentDidMount() {
     this.props.fetchCart()
   }
   render() {
-    const { cart } = this.props
-    let currentTotal = 0;
-    cart.map(item => {currentTotal += item.quantity})
-    return <div><Icon name="cart"></Icon>Cart | {currentTotal}</div>
+    const {cart} = this.props
+    let currentTotal = 0
+    cart.map(item => {
+      currentTotal += item.quantity
+    })
+    return (
+      <div>
+        <Icon name="cart" />Cart | {currentTotal}
+      </div>
+    )
   }
 }
 
@@ -23,7 +29,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCart: () => dispatch(fetchCart()),
+    fetchCart: () => dispatch(fetchCart())
   }
 }
 
