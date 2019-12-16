@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: sans-serif;
 }
@@ -38,13 +43,13 @@ form div {
 .home-title {
   font-size: 80px;
   color: white;
-  text-shadow: 1px 1px 3px black; 
+  text-shadow: 1px 1px 3px black;
 }
 
 .home-subtitle {
   font-size: 30px;
   color: white;
-  text-shadow: 1px 1px 3px black; 
+  text-shadow: 1px 1px 3px black;
 }
 
 #homepage-text {
