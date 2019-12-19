@@ -13,21 +13,19 @@ class AllRice extends Component {
     return (
       <div>
         <main>
-          <section id="about">
-            <div>
-              <div id="homepage-text">
+          <section className="hero">
+            <div className="hero__content">
+              <div className="homepage-text">
                 <h1 className="home-title">Welcome to ShopRice</h1>
                 <p className="home-subtitle">
                   Providing the highest quality of rice since 1902
                 </p>
               </div>
-              <div id="aboutbackground">
-                <img
-                  className="homepage"
-                  src="/pictures/hero.jpg"
-                  alt="Homepage background"
-                />
-              </div>
+              <img
+                className="homepage"
+                src="/pictures/hero.jpg"
+                alt="Homepage background"
+              />
             </div>
           </section>
 
