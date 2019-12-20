@@ -11,7 +11,7 @@ const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
 
   return (
-    <div>
+    <div className="authform">
       <Form onSubmit={handleSubmit} name={name} className="formInputs">
         <div>
           <label htmlFor="email">

@@ -16,55 +16,52 @@ class Navbar extends Component {
   render() {
     const {isLoggedIn, handleClick} = this.props
     return (
-      <div className="navBar">
-        <nav>
-          <h1 id="title">
-            <Link to="/home">SHOP RICE</Link>
-          </h1>
-          {isLoggedIn ? (
-            <div className="navBar-buttons">
-              {/* The navbar will show these links after you log in */}
-              <div>
-                <UserHome user={this.props.user} />
+      <nav className="navbar">
+        <h1 id="title">
+          <Link to="/home">SHOP RICE</Link>
+        </h1>
+        {isLoggedIn ? (
+          <div className="navbar__buttons">
+            {/* The navbar will show these links after you log in */}
+            <div>
+              <UserHome user={this.props.user} />
+            </div>
+            <Link to="/home">Home</Link>
+            <Link to="/orders">Order History</Link>
+            <a href="#" onClick={handleClick}>
+              Logout
+            </a>
+            <Link to="/cart">
+              <CartCounter />
+            </Link>
+          </div>
+        ) : (
+          <div className="navbar__buttons">
+            {/* The navbar will show these links before you log in */}
+            <div className="ui compact menu">
+              <div className="ui simple dropdown item">
+                Login
+                <div id="login-form" className="menu">
+                  <div className="item">
+                    <Login />
+                  </div>
+                </div>
               </div>
-              <Link to="/home">Home</Link>
-              <Link to="/orders">Order History</Link>
-              <a href="#" onClick={handleClick}>
-                Logout
-              </a>
+              <div className="ui simple dropdown item">
+                Signup
+                <div id="signup-form" className="menu">
+                  <div className="item">
+                    <Signup />
+                  </div>
+                </div>
+              </div>
               <Link to="/cart">
                 <CartCounter />
               </Link>
             </div>
-          ) : (
-            <div className="navBar-buttons">
-              {/* The navbar will show these links before you log in */}
-              <div className="ui compact menu">
-                <div className="ui simple dropdown item">
-                  Login
-                  <div id="login-form" className="menu">
-                    <div className="item">
-                      <Login />
-                    </div>
-                  </div>
-                </div>
-                <div className="ui simple dropdown item">
-                  Signup
-                  <div id="signup-form" className="menu">
-                    <div className="item">
-                      <Signup />
-                    </div>
-                  </div>
-                </div>
-                <Link to="/cart">
-                  <CartCounter />
-                </Link>
-              </div>
-            </div>
-          )}
-        </nav>
-        <hr />
-      </div>
+          </div>
+        )}
+      </nav>
     )
   }
 }

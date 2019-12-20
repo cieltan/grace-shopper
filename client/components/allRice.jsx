@@ -11,39 +11,32 @@ class AllRice extends Component {
   render() {
     const {rice} = this.props
     return (
-      <div>
-        <main>
-          <section className="hero">
-            <div className="hero__content">
-              <div className="homepage-text">
-                <h1 className="home-title">Welcome to ShopRice</h1>
-                <p className="home-subtitle">
-                  Providing the highest quality of rice since 1902
-                </p>
-              </div>
-              <img
-                className="homepage"
-                src="/pictures/hero.jpg"
-                alt="Homepage background"
-              />
+      <main>
+        <section className="hero">
+          <div className="hero__content">
+            <div className="hero__content-text">
+              <h1 className="hero__content-text--title">Welcome to ShopRice</h1>
+              <p className="hero__content-text--subtitle">
+                Providing the highest quality of rice since 1902
+              </p>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section id="product">
-            <h1>All Rice Products</h1>
-            <div className="allProducts">
-              {rice.map(singleRice => (
-                <div className="singleProduct" key={singleRice.id}>
-                  <Link to={`/allproducts/${singleRice.id}`}>
-                    <h2>{singleRice.name}</h2>
-                    <img className="riceIMG" src={singleRice.img} />
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </section>
-        </main>
-      </div>
+        <section id="product">
+          <h1>All Rice Products</h1>
+          <div className="allProducts">
+            {rice.map(singleRice => (
+              <div className="singleProduct" key={singleRice.id}>
+                <Link to={`/allproducts/${singleRice.id}`}>
+                  <h2>{singleRice.name}</h2>
+                  <img className="riceIMG" src={singleRice.img} />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
     )
   }
 }

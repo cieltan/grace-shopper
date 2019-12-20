@@ -9,7 +9,7 @@ import SingleOrder from './components/SingleOrder'
 import OrderCheckout from './components/OrderCheckout'
 const App = () => {
   return (
-    <div>
+    <div className="app--container">
       <Navbar />
       <Routes />
       <Switch>
